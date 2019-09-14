@@ -35,10 +35,10 @@ fs.ensureDirSync(buildPath);
 
 fs.outputJSONSync(
     path.resolve(buildPath, "Statement.json"),
-    JSON.stringify(statementContractOutput)
+    statementContractOutput
 );
 
 fs.outputJSONSync(
         path.resolve(buildPath, "StatementFactory.json"),
-        JSON.stringify(statementFactoryContractOutput)
+        statementFactoryContractOutput
 );
