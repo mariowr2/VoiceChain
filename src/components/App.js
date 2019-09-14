@@ -1,32 +1,31 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Logo from '../img/logo.png';
+
 import web3 from '../eth/web3';
 import factory from '../eth/factory';
 import { getStatement } from '../eth/statement';
+import { Router, Route, Switch } from 'react-router-dom';
+
+import Navbar from './Navbar';
+import Main from './pages/MainPage';
+import Info from './pages/InfoPage';
+import Mission from './pages/MissionPage';
+import Post from './pages/PostPage';
+import Search from './pages/SearchPage';
+import history from '../history';
 
 function App() {
-  const useStyles = makeStyles(theme => ({
-    button: {
-      margin: theme.spacing(1),
-    },
-    input: {
-      display: 'none',
-    },
-  }));
-  const classes = useStyles();
-
   return (
-    <div className="App">
-      <Typography>
-        This is text
-      </Typography>
-      <Button variant="contained" color="primary" className={classes.button} onClick={getFactoryItems}>
-        This is a button
-      </Button>
-      <img src={Logo} />
+    <div>
+      <Router history={history}>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Main} />
+          <Route path="/how-does-it-work" exact component={Info} />
+          <Route path="/our-mission" exact component={Mission} />
+          <Route path="/post" exact component={Post} />
+          <Route path="/search" exact component={Search} />
+        </Switch>
+      </Router>
     </div>
   );
 }
@@ -45,7 +44,7 @@ const getFactoryItems = async() => {
   let statementContract = getStatement(statementAddress[0]);
   console.log(statementContract)
 
-  let miguelStatement = await statementContract.metthods.getMiguelStatement!
+  //let miguelStatement = await statementContract.metthods.getMiguelStatement!
 
 }
 
