@@ -8,6 +8,7 @@ import Mission from './pages/MissionPage';
 import Post from './pages/PostPage';
 import Search from './pages/SearchPage';
 import history from '../history';
+import './App.css';
 
 function App() {
   return (
