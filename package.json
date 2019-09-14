@@ -5,14 +5,9 @@
   "dependencies": {
     "@material-ui/core": "^4.4.2",
     "@material-ui/icons": "^4.4.1",
-    "fs-extra": "^8.1.0",
-    "ganache-cli": "^6.7.0",
-    "mocha": "^6.2.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1",
-    "solc": "^0.5.11",
-    "web3": "^1.2.1"
+    "react-scripts": "3.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
