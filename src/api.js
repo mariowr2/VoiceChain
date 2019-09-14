@@ -3,14 +3,13 @@ import factory from './eth/factory';
 import { getStatement } from './eth/statement';
 
 
-
-//returns the contract instance
+//returns the statement instance
 export function getStatementInstance(address){
     return getStatement(address);
 }
 
-//returns the contract instance loaded from the blockchain
-export function getStatementFactory(){
+//returns the factory instance
+export function getStatementFactory(address){
     return factory;
 }
 

@@ -35,12 +35,13 @@ function App() {
 
 const getFactoryItems = async() => {
 
-  const factory = getStatementFactory();
+  const factory = getStatementFactory('0x9628B80CfC747725Fa0f6a9b21D1931dDFbbe4c8');
   console.log(factory);
 
   const addresses = getStatementInstancesAddresses();
   console.log(addresses);
 
+  console.log(addresses);
   const statementInstance = getStatementInstance(addresses[0]);
   console.log(statementInstance);
 

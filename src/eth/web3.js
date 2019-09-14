@@ -1,7 +1,11 @@
 import Web3 from 'web3';
 
-let web3;
 
+// const ganache = require('ganache-cli');
+// const web3  = new Web3(ganache.provider()); 
+
+//uncomment to use real ethereum test net
+let web3;
 if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
   // We are in the browser and metamask is running.
   web3 = new Web3(window.web3.currentProvider);

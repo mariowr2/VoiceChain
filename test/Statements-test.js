@@ -6,8 +6,8 @@ const web3  = new Web3(ganache.provider()); //create the instance and give the p
 
 
 
-const compiledStatementFactory = require('../eth/build/StatementFactory.json');
-const compiledStatement = require('../eth/build/Statement.json');
+const compiledStatementFactory = require('../src/eth/build/StatementFactory.json');
+const compiledStatement = require('../src/eth/build/Statement.json');
 
 let accounts;
 let statementFactory;
