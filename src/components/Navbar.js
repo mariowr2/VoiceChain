@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Color from './Color';
 import Logo from '../img/logo.png';
 
 const useStyles = makeStyles(theme => ({
@@ -26,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar() {
     const classes = useStyles();
+    const grey = new Color().Subheader;
 
     return (
         <div className={classes.root}>
@@ -38,10 +40,10 @@ export default function ButtonAppBar() {
 
                     </Typography>
                     <Link to="/our-mission" style={{ textDecoration: 'none' }}>
-                        <Button color="inherit" style={{ color: 'black' }}>Our Mission</Button>
+                        <Button uppercase={false} style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>Our Mission</Button>
                     </Link>
                     <Link to="/how-does-it-work" style={{ textDecoration: 'none' }}>
-                        <Button color="inherit" style={{ color: 'black' }}>How Does It Work</Button>
+                        <Button style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>How Does It Work</Button>
                     </Link>
                 </Toolbar>
             </AppBar>
