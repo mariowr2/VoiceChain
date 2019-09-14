@@ -1,10 +1,10 @@
 import React from 'react';
 
-import web3 from '../eth/web3';
-import factory from '../eth/factory';
+import { getStatementInstance, getStatementFactory, getStatementInstancesAddresses } from '../api'
+
 import { getStatement } from '../eth/statement';
 import { Router, Route, Switch } from 'react-router-dom';
-
+import Button from '@material-ui/core/Button';
 import Navbar from './Navbar';
 import Main from './pages/MainPage';
 import Info from './pages/InfoPage';
@@ -18,6 +18,9 @@ function App() {
     <div>
       <Router history={history}>
         <Navbar />
+        <Button variant="contained" color="primary" onClick={getFactoryItems}>
+        This is a button
+      </Button>
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/how-does-it-work" exact component={Info} />
@@ -31,20 +34,15 @@ function App() {
 }
 
 const getFactoryItems = async() => {
-  console.log("get factory called!");
-  console.log(web3);
-  console.log("web3 version is ",web3.version);
-  console.log("this are the methods:");
+
+  const factory = getStatementFactory();
   console.log(factory);
-  
-  let statementAddress = await factory.methods.getStatements().call();
-  console.log("the response is",statementAddress);
 
+  const addresses = getStatementInstancesAddresses();
+  console.log(addresses);
 
-  let statementContract = getStatement(statementAddress[0]);
-  console.log(statementContract)
-
-  //let miguelStatement = await statementContract.metthods.getMiguelStatement!
+  const statementInstance = getStatementInstance(addresses[0]);
+  console.log(statementInstance);
 
 }
 
