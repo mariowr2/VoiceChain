@@ -2,10 +2,12 @@ const assert = require('assert');
 const ganache = require('ganache-cli'); //local ethereum network
 const Web3 = require('web3'); //uper casse because we are requiring the constructor of Web3, 'web3 = new Web3()'
 const web3  = new Web3(ganache.provider()); //create the instance and give the provider
+//import compile from './eth/compile';
 
 
-const compiledStatementFactory = require('../build/StatementFactory.json');
-const compiledStatement = require('../build/Statement.json');
+
+const compiledStatementFactory = require('../eth/build/StatementFactory.json');
+const compiledStatement = require('../eth/build/Statement.json');
 
 let accounts;
 let statementFactory;

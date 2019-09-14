@@ -20,6 +20,10 @@ contract StatementFactory {
         statementAddresses.push(new Statement(_statement, _author));
         currentIndex++;
     }
+
+    function getStatements() public view returns(Statement[] memory){
+        return statementAddresses;
+    }
 }
 
 
