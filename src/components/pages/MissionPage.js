@@ -19,16 +19,17 @@ function MissionPage() {
     return (
           <div>
             <Container className={classes.container} style={{backgroundColor: 'white'}}>
-              <Typography className={classes.title} style={{fontWeight: 500, fontSize: '120%'}}>Our Story</Typography>
+              <Typography className={classes.title} style={{fontWeight: 500, fontSize: '120%'}}>About VoiceChain</Typography>
               <Typography>
-                All over the world today, every news channel that we are exposed to have content that have a possibility of being altered or skewed to tell the story THEY want to tell. Every story has multiple sides with each person involved. We want those voices to be heard uncensored by the speaker themselves.
+              VoiceChain allows activists to share their work in an uncensorable, tamper-proof platform.To achieve this, we leverage decentralized technology: the Ethereum Blockchain, and the Interplanetary file system.
               </Typography>
           </Container>
 
           <Container className={classes.container}>
             <Typography style={{fontWeight: 500, fontSize: '120%'}}>Desired Impact</Typography>
             <Typography>
-              VoiceChain will allow anyone who wants to have a voice to speak up. They are free to post whatever they want, and it won’t ever get taken down or altered because the content is not owned by anyone. With blockchain technology we allow content to be posted in a decentralized system. 
+            VoiceChain will allow anyone who wants to have a voice to speak up. VoiceChain empowers activists and journalists to communicate their message to the world instantly; <b>no matter what continent, country or regime you live in</b>.
+ 
             </Typography>
           </Container>
       </div>

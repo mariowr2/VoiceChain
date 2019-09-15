@@ -41,7 +41,7 @@ export default function ButtonAppBar() {
 
                     </Typography>
                     <Link to="/our-mission" style={{ textDecoration: 'none' }}>
-                        <Button uppercase={false} style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>Our Mission</Button>
+                        <Button uppercase={false} style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>About VoiceChain</Button>
                     </Link>
                     <Link to="/how-does-it-work" style={{ textDecoration: 'none' }}>
                         <Button style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>How Does It Work</Button>
