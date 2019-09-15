@@ -72,7 +72,7 @@ const PostPage = (props) => {
         <InputBase
               placeholder="Make your statement."
               inputProps={{ 'aria-label': 'search' }}
-              style={{width: '98%', textAlign: 'center', paddingBlockEnd: '20%'}}
+              style={{width: '98%', textAlign: 'center', paddingBlockEnd: '20%', backgroundColor: 'white'}}
               />
         </div>
         <Button className={classes.button} style={{backgroundColor: postColor}}>Search</Button>
