@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getStatementInstance, getStatementFactory, getStatementInstancesAddresses } from '../api'
+import { getStatementInstance, getStatementFactory, getStatementInstancesAddresses , getFactoryOwner, getStatementAddressByIndex, getStatementFromInstance, getStatementAuthor} from '../api'
 
 import { getStatement } from '../eth/statement';
 import { Router, Route, Switch } from 'react-router-dom';
@@ -35,15 +35,53 @@ function App() {
 
 const getFactoryItems = async() => {
 
-  const factory = getStatementFactory('0x9628B80CfC747725Fa0f6a9b21D1931dDFbbe4c8');
-  console.log(factory);
+  const factory = getStatementFactory();
+  //console.log(factory);
 
-  const addresses = getStatementInstancesAddresses();
-  console.log(addresses);
+  const factoryOwner = getFactoryOwner();
+  //console.log(factoryOwner);
 
-  console.log(addresses);
-  const statementInstance = getStatementInstance(addresses[0]);
-  console.log(statementInstance);
+  let addresses;
+  getStatementInstancesAddresses().then(
+    function(returnVal) {
+      addresses = returnVal;
+    }
+  );;
+  
+
+  let addressByIndex;
+  await getStatementAddressByIndex(0).then(
+    function(returnVal) {
+      addressByIndex = returnVal;
+      console.log("returned address is ", addressByIndex)
+    }
+  );
+
+
+  let statementInstance;
+  getStatementInstance(addressByIndex).then(
+    function(returnVal) {
+      statementInstance = returnVal;
+    }
+  );
+
+  let statement;
+  getStatementFromInstance(addressByIndex).then(
+    function(returnVal) {
+      statement = returnVal;
+      console.log("statement by m is , ", statement);
+    }
+  );
+
+
+  let author;
+  getStatementAuthor(addressByIndex).then(
+    function(returnVal) {
+      author = returnVal;
+      console.log("author is ",author);
+
+    }
+  );
 
 }
 
