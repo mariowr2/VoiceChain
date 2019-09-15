@@ -3,9 +3,21 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-## Our Story
+## About VoiceChain
 
-Yum yum yum
+VoiceChain allows activists to share their work in an uncensorable, tamper-proof platform.To achieve this, we leverage decentralized technology: the Ethereum Blockchain, and the Interplanetary file system. VoiceChain empowers activists and journalists to communicate their message to the world instantly; no matter what continent, country or regime you live in.
+
+### Ethereum Setup
+
+In order to use VoiceChain, users need to have an Ethereum account to post their message. Once Ether is acquired, they can use an EtherWalletto spend the Ether they have on VoiceChain. Here are the steps to use VoiceChain.
+* <b>Get currency</b>:
+    Buy Ether on https://www.coinbase.com/
+* <b>Get wallet</b>:
+    Sign up for MetaMask https://metamask.io/ 
+
+* <b>Get heard</b>:
+    *Make post on VoiceChain* Share your message's address with the world.
+
 
 ## Install
 
@@ -13,7 +25,7 @@ Yum yum yum
 npm install
 ```
 
-## Usage
+## Run
 
 ```sh
 npm run start
