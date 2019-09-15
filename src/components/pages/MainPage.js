@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Color from '../Color';
-import { transform } from '@babel/core';
 
 function MainPage() {
   const postColor = new Color().Post;
@@ -53,8 +53,12 @@ function MainPage() {
         alignItems="center"
         >
           <tr style={{width: '100%'}}>
-            <Button className={classes.button} style={{backgroundColor: searchColor,}}>Search</Button>
-            <Button className={classes.button} style={{backgroundColor: postColor,}}>Post</Button>
+            <Link to="/search" style={{ textDecoration: 'none' }}>
+              <Button className={classes.button} style={{backgroundColor: searchColor,}}>Search</Button>
+            </Link>
+            <Link to="/post" style={{ textDecoration: 'none' }}>
+              <Button className={classes.button} style={{backgroundColor: postColor,}}>Post</Button>
+            </Link>
           </tr>
         </Grid>
         
