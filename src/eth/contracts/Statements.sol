@@ -21,6 +21,10 @@ pragma solidity ^0.5.1;
     }
     
     
+    function getCurrentIndex() public view returns(uint){
+        return currentIndex - 1;
+    }
+    
     function getStatements() public view returns(Statement[] memory){
         return statementAddresses;
     }
