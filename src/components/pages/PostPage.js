@@ -12,6 +12,10 @@ const PostPage = (props) => {
   const postColor = new Color().Post;
   const subheaderColor = new Color().Subheader;
 
+  const handleClick = () => {
+    // send request
+  }
+
     const useStyles = makeStyles(theme => ({
       root: {
         flexGrow: 1,
@@ -75,8 +79,9 @@ const PostPage = (props) => {
               style={{width: '98%', textAlign: 'center', paddingBlockEnd: '20%', backgroundColor: 'white'}}
               />
         </div>
-        <Button className={classes.button} style={{backgroundColor: postColor}}>Search</Button>
-        
+        <Link to="/post-confirmation" style={{ textDecoration: 'none' }}>
+        <Button className={classes.button} style={{backgroundColor: postColor}} onClick={handleClick}>Search</Button>
+        </Link>
     </div>
 
 

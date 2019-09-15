@@ -10,6 +10,7 @@ import Main from './pages/MainPage';
 import Info from './pages/InfoPage';
 import Mission from './pages/MissionPage';
 import Post from './pages/PostPage';
+import PostConfirmation from './pages/PostConfirmation';
 import Search from './pages/SearchPage';
 import ParticleComponent from './ParticlesContainer';
 import history from '../history';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/how-does-it-work" exact component={() => <Info />} />
           <Route path="/our-mission" exact component={Mission} />
           <Route path="/post" exact component={Post} />
+          <Route path="/post-confirmation" exact component={PostConfirmation} />
           <Route path="/search" exact component={Search} />
         </Switch>
       </Router>

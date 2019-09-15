@@ -105,7 +105,7 @@ export default () => (
               distance: 400,
               size: 40,
               duration: 2,
-              opacity: 8,
+              opacity: 0.1,
               speed: 3
             },
             repulse: {
