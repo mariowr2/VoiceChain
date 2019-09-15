@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Particles from 'react-particles-js';
 import { getStatementInstance, getStatementFactory, getStatementInstancesAddresses } from '../api'
 
 import { getStatement } from '../eth/statement';
@@ -11,6 +11,7 @@ import Info from './pages/InfoPage';
 import Mission from './pages/MissionPage';
 import Post from './pages/PostPage';
 import Search from './pages/SearchPage';
+import ParticleComponent from './ParticlesContainer';
 import history from '../history';
 import './App.css';
 
@@ -22,11 +23,11 @@ function App() {
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: bgColor
   }
 
   return (
     <div style={styles} >
+      <ParticleComponent />
       <Router history={history}>
         <Navbar />
         {/* <Button variant="contained" color="primary" onClick={getFactoryItems}>
