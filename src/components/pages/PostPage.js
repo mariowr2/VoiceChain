@@ -23,12 +23,12 @@ const PostPage = (props) => {
   </FormControl>
   
   const handleClick = () => {
-    setMessage(document.getElementById('my-input').value);
-    deployStatement();
+    const messageToPost = document.getElementById('my-input').value
+    deployStatement(messageToPost);
   }
 
-  const deployStatement = async() => {
-    await createStatement(message, "Kevin Navarro"); //deploy the statement contract
+  const deployStatement = async(messageToPost) => {
+    await createStatement(messageToPost, "Kevin Navarro"); //deploy the statement contract
     const latestAddress = await getLatestStatementAddress(); // get the address of the deployed contract
 
     setPage('confirm');
