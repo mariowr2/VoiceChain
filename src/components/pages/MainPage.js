@@ -6,10 +6,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Color from '../Color';
 
-function MainPage() {
+const MainPage = (props) => {
   const postColor = new Color().Post;
   const searchColor = new Color().Search;
   const subheaderColor = new Color().Subheader;
+  props.newColor('white');
 
     const useStyles = makeStyles(theme => ({
       root: {

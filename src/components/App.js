@@ -15,22 +15,36 @@ import history from '../history';
 import './App.css';
 
 function App() {
+  let bgColor = 'white';
+
+  let styles = {position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: bgColor
+  }
+
+  let UpdateColor = (color) => {
+    styles.backgroundColor = color;
+  }
+
   return (
-    <div>
+    <div style={styles}>
       <Router history={history}>
         <Navbar />
         <Button variant="contained" color="primary" onClick={getFactoryItems}>
         This is a button
       </Button>
         <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/how-does-it-work" exact component={Info} />
+          <Route path="/" exact component={() => <Main newColor={UpdateColor} />} />
+          <Route path="/how-does-it-work" exact component={<Info newColor={UpdateColor} />} />
           <Route path="/our-mission" exact component={Mission} />
           <Route path="/post" exact component={Post} />
           <Route path="/search" exact component={Search} />
         </Switch>
       </Router>
-    </div>
+      </div>
   );
 }
 
