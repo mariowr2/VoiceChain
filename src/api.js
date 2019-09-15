@@ -16,13 +16,12 @@ export async function getStatementInstance(address){
 
 //get the statement from the statement hehe
 export async function getStatementFromInstance(address){
-    //let instance = getStatement(address);
     return await getStatement(address).methods.getStatement().call();
 }
 
 //get the author of the statement
 export async function getStatementAuthor(address){
-    //let instance = getStatement(address);
+    console.log("Getting address", address);
     return await getStatement(address).methods.getAuthor().call();
 }
 

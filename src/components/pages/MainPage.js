@@ -47,7 +47,7 @@ const MainPage = (props) => {
     return (
       <div className={classes.root}>
         <Typography className={classes.header}>Welcome to VoiceChain</Typography>
-        <Typography className={classes.subheader}>Uncensored content. Available permanently.</Typography>
+        <Typography className={classes.subheader}>Uncensorable content. Available permanently.</Typography>
         <Grid  container
         direction="row"
         justify="center"

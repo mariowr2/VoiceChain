@@ -45,63 +45,20 @@ function App() {
 
 const getFactoryItems = async() => {
 
-  const factory = getStatementFactory(); //GET AN INSTANCE OF THE FACTORY
-  //console.log(factory);
-
-  const factoryOwner = getFactoryOwner(); //GET THE ADDRESS WHO DEPLOYED THE FACTORY
-  //console.log(factoryOwner);
-
-  let addresses;
-  getStatementInstancesAddresses().then( //GET THE ARRAY CONTAINING ADDRESSES OF CREATED STATEMENTS
-    function(returnVal) {
-      addresses = returnVal;
-    }
-  );;
-  
-
-  let addressByIndex;
-  await getStatementAddressByIndex(0).then( // GET A SPECIFIC STATEMENT ADDRESS BY INDEX
-    function(returnVal) {
-      addressByIndex = returnVal;
-      console.log("returned address is ", addressByIndex)
-    }
-  );
 
 
-  let statementInstance;
-  getStatementInstance(addressByIndex).then( // GET AN EXISTING STATEMENT CONTRACT INSTANCE
-    function(returnVal) {
-      statementInstance = returnVal;
-    }
-  );
 
-  let statement;
-  getStatementFromInstance(addressByIndex).then( //GET THE STATEMENT INSIDE AN EXISTING STATEMENT CONTRACT
-    function(returnVal) {
-      statement = returnVal;
-      console.log("statement by m is , ", statement);
-    }
-  );
+  // let author;
+  // getStatementAuthor(addressByIndex).then(  //GET THE STATEMENT AUTHOR FROM AN EXISTING STATEMENT CONTRACT
+  //   function(returnVal) {
+  //     author = returnVal;
+  //     console.log("author is ",author);
 
-
-  let author;
-  getStatementAuthor(addressByIndex).then(  //GET THE STATEMENT AUTHOR FROM AN EXISTING STATEMENT CONTRACT
-    function(returnVal) {
-      author = returnVal;
-      console.log("author is ",author);
-
-    }
-  );
+  //   }
+  // );
 
   
 
-  await createStatement("ya estoy que ya", "Mario") //CREATE A NEW STATEMENT CONTRACT
-
- 
-
-
-  const latestAddress = await getLatestStatementAddress();  // GET THE LATEST CREATED ADDRESS
-  console.log("latest address is  ",latestAddress);
 
 }
 

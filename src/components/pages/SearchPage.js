@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 import { FormControl, InputLabel, Input } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Color from '../Color';
+import { getStatementFromInstance , getStatementAuthor } from '../../api';
+import { getStatement } from '../../eth/statement'
 
 const SearchPage = (props) => {
   const persona = 'Kevin Navarro';
@@ -11,6 +13,7 @@ const SearchPage = (props) => {
   const [page, setPage] = useState('search');
   const [hashcode, setHashcode] = useState('search');
   const [success, setSuccess] = useState('false');
+  const [message, setMessage] = useState('');
   const searchColor = new Color().Search;
   const subheaderColor = new Color().Subheader;
   const base = <FormControl
@@ -20,11 +23,22 @@ const SearchPage = (props) => {
   <Input id="my-input" aria-describedby="my-helper-text"  />
   </FormControl>
 
-const handleClick = () => {
-  setPage('confirm');
-  setHashcode(document.getElementById('my-input').value);
+const handleClick = async() => {
+  const boop = document.getElementById('my-input').value;
+  const statement = await getStatementFromInstance(boop);
+  setMessage(statement);
   setSuccess('true');
+  setPage('confirm');
+  
 }
+
+
+
+
+
+
+
+
   const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
@@ -98,7 +112,7 @@ const handleClick = () => {
             <Typography className={classes.header} style={{ fontWeight: '500', backgroundColor: 'black', color: 'white' }}>From {persona}</Typography>
             <Typography className={classes.header} style={{ fontWeight: '300', fontSize: '100%', fontStyle: 'italic', backgroundColor: 'black', color: 'white' }}>{date}</Typography>
           <Typography style={{ textAlign: 'center', fontSize: '200%', paddingTop: '5%', paddingBottom: '20%', backgroundColor: 'black', color: 'white', font: 'Roboto' }}>
-            INSERT MESSAGE HERE
+            {message}
             </Typography>
         </div>
       </div>
