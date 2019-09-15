@@ -3,7 +3,7 @@ import compiledStatementFactory from './build/StatementFactory';
     
     const factoryInstance = new web3.eth.Contract(
         compiledStatementFactory.abi,
-        '0x47cf5251941B3C6609BF59254F583A13a15EFf6d'
+        '0x2DC4c1aC4e5e9a05B59167F33AC745A360c850C4'
     );
     
 

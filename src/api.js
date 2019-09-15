@@ -60,3 +60,22 @@ export async function createStatement(statement, author){
 
 }
 
+export async function getLatestStatementAddress(){
+    let latestIndex;
+    await factory.methods.getCurrentIndex().call().then(
+        function(returnVal) {
+          latestIndex = returnVal;
+          console.log("latest index is ",latestIndex);
+        }
+    );
+
+    let latestAddress;
+    await factory.methods.getStatementAddressByIndex(latestIndex).call().then(
+        function(returnVal) {
+            latestAddress = returnVal;
+        }
+    );
+
+    return latestAddress;
+}
+

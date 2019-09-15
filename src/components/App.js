@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getStatementInstance, getStatementFactory, getStatementInstancesAddresses } from '../api'
 import { getFactoryOwner, getStatementAddressByIndex, getStatementFromInstance } from '../api'
-import { getStatementAuthor, createStatement } from '../api'
+import { getStatementAuthor, createStatement, getLatestStatementAddress } from '../api'
 
 
 import { Router, Route, Switch } from 'react-router-dom';
@@ -48,14 +48,14 @@ function App() {
 
 const getFactoryItems = async() => {
 
-  const factory = getStatementFactory();
+  const factory = getStatementFactory(); //GET AN INSTANCE OF THE FACTORY
   //console.log(factory);
 
-  const factoryOwner = getFactoryOwner();
+  const factoryOwner = getFactoryOwner(); //GET THE ADDRESS WHO DEPLOYED THE FACTORY
   //console.log(factoryOwner);
 
   let addresses;
-  getStatementInstancesAddresses().then(
+  getStatementInstancesAddresses().then( //GET THE ARRAY CONTAINING ADDRESSES OF CREATED STATEMENTS
     function(returnVal) {
       addresses = returnVal;
     }
@@ -63,7 +63,7 @@ const getFactoryItems = async() => {
   
 
   let addressByIndex;
-  await getStatementAddressByIndex(0).then(
+  await getStatementAddressByIndex(0).then( // GET A SPECIFIC STATEMENT ADDRESS BY INDEX
     function(returnVal) {
       addressByIndex = returnVal;
       console.log("returned address is ", addressByIndex)
@@ -72,14 +72,14 @@ const getFactoryItems = async() => {
 
 
   let statementInstance;
-  getStatementInstance(addressByIndex).then(
+  getStatementInstance(addressByIndex).then( // GET AN EXISTING STATEMENT CONTRACT INSTANCE
     function(returnVal) {
       statementInstance = returnVal;
     }
   );
 
   let statement;
-  getStatementFromInstance(addressByIndex).then(
+  getStatementFromInstance(addressByIndex).then( //GET THE STATEMENT INSIDE AN EXISTING STATEMENT CONTRACT
     function(returnVal) {
       statement = returnVal;
       console.log("statement by m is , ", statement);
@@ -88,7 +88,7 @@ const getFactoryItems = async() => {
 
 
   let author;
-  getStatementAuthor(addressByIndex).then(
+  getStatementAuthor(addressByIndex).then(  //GET THE STATEMENT AUTHOR FROM AN EXISTING STATEMENT CONTRACT
     function(returnVal) {
       author = returnVal;
       console.log("author is ",author);
@@ -98,7 +98,13 @@ const getFactoryItems = async() => {
 
   
 
-  await createStatement("ya estoy que ya", "Mario")
+  await createStatement("ya estoy que ya", "Mario") //CREATE A NEW STATEMENT CONTRACT
+
+ 
+
+
+  const latestAddress = await getLatestStatementAddress();  // GET THE LATEST CREATED ADDRESS
+  console.log("latest address is  ",latestAddress);
 
 }
 
