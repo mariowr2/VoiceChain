@@ -10,14 +10,13 @@ const MainPage = (props) => {
   const postColor = new Color().Post;
   const searchColor = new Color().Search;
   const subheaderColor = new Color().Subheader;
-  props.newColor('white');
 
     const useStyles = makeStyles(theme => ({
       root: {
         flexGrow: 1,
         textAlign: 'center',
         alignItems: 'center',
-        padding: '10%'
+        padding: '10%',
       },
       header: {
         fontSize: '2.5rem',

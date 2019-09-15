@@ -25,20 +25,16 @@ function App() {
     backgroundColor: bgColor
   }
 
-  let UpdateColor = (color) => {
-    styles.backgroundColor = color;
-  }
-
   return (
-    <div style={styles}>
+    <div style={styles} >
       <Router history={history}>
         <Navbar />
-        <Button variant="contained" color="primary" onClick={getFactoryItems}>
+        {/* <Button variant="contained" color="primary" onClick={getFactoryItems}>
         This is a button
-      </Button>
+      </Button> */}
         <Switch>
-          <Route path="/" exact component={() => <Main newColor={UpdateColor} />} />
-          <Route path="/how-does-it-work" exact component={<Info newColor={UpdateColor} />} />
+          <Route path="/" exact component={() => <Main />} />
+          <Route path="/how-does-it-work" exact component={() => <Info />} />
           <Route path="/our-mission" exact component={Mission} />
           <Route path="/post" exact component={Post} />
           <Route path="/search" exact component={Search} />
