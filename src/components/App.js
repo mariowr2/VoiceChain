@@ -15,7 +15,7 @@ import history from '../history';
 import './App.css';
 
 function App() {
-  let bgColor = 'white';
+  let bgColor = 'transparent';
 
   let styles = {position: 'absolute',
     left: 0,
