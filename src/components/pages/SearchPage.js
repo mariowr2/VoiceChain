@@ -67,7 +67,7 @@ const SearchPage = (props) => {
         <InputBase
               placeholder="Enter the message code..."
               inputProps={{ 'aria-label': 'search' }}
-              style={{width: '98%', textAlign: 'center'}}
+              style={{width: '98%', textAlign: 'center', backgroundColor: 'white'}}
               />
         </div>
         <Button className={classes.button} style={{backgroundColor: searchColor,}}>Search</Button>
