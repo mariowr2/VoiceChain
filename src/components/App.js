@@ -31,9 +31,6 @@ function App() {
       <ParticleComponent />
       <Router history={history}>
         <Navbar />
-        <Button variant="contained" color="primary" onClick={getFactoryItems}>
-        TTTTEEEEEESSSSSSTTTTT
-      </Button>
         <Switch>
           <Route path="/" exact component={() => <Main />} />
           <Route path="/how-does-it-work" exact component={() => <Info />} />

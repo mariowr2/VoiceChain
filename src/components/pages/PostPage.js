@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Color from '../Color';
+import { createStatement, getLatestStatementAddress } from '../../api';
 
 const PostPage = (props) => {
   const [page, setPage] = useState('post');
@@ -23,8 +24,15 @@ const PostPage = (props) => {
   
   const handleClick = () => {
     setMessage(document.getElementById('my-input').value);
+    deployStatement();
+  }
+
+  const deployStatement = async() => {
+    await createStatement(message, "Kevin Navarro"); //deploy the statement contract
+    const latestAddress = await getLatestStatementAddress(); // get the address of the deployed contract
+
     setPage('confirm');
-    setHashcode('');
+    setHashcode(latestAddress);//pass in address of contract
   }
 
   const useStyles = makeStyles(theme => ({
