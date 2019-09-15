@@ -38,11 +38,12 @@ const MainPage = (props) => {
         marginTop: '2rem',
         marginLeft: '1rem',
         marginRight: '1rem',
-        textTransform: 'none'
+        textTransform: 'none',
       }
     }));
   
     const classes = useStyles();
+    
     return (
       <div className={classes.root}>
         <Typography className={classes.header}>Welcome to VoiceChain</Typography>
@@ -54,10 +55,10 @@ const MainPage = (props) => {
         >
           <tr style={{width: '100%'}}>
             <Link to="/search" style={{ textDecoration: 'none' }}>
-              <Button className={classes.button} style={{backgroundColor: searchColor,}}>Search</Button>
+              <Button className={classes.button} style={{backgroundColor: searchColor}}>Search</Button>
             </Link>
             <Link to="/post" style={{ textDecoration: 'none' }}>
-              <Button className={classes.button} style={{backgroundColor: postColor,}}>Post</Button>
+              <Button className={classes.button} style={{backgroundColor: postColor}}>Post</Button>
             </Link>
           </tr>
         </Grid>
