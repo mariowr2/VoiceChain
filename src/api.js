@@ -1,4 +1,4 @@
-//import web3 from './eth/web3';
+import web3 from './eth/web3';
 import factory from './eth/factory';
 import { getStatement } from './eth/statement';
 
@@ -50,5 +50,13 @@ export async function getFactoryOwner(){
 //returns the address of a deployed statement
 export async function getStatementAddressByIndex(index){
     return await factory.methods.getStatementAddressByIndex(index).call();
+}
+
+//statement creation function
+export async function createStatement(statement, author){
+    const accounts = await web3.eth.getAccounts();
+    await window.ethereum.enable(); //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    await factory.methods.createStatement(statement, author).send({from : accounts[0], gas: 1000000});
+
 }
 

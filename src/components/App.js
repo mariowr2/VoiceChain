@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { getStatementInstance, getStatementFactory, getStatementInstancesAddresses , getFactoryOwner, getStatementAddressByIndex, getStatementFromInstance, getStatementAuthor} from '../api'
+import { getStatementInstance, getStatementFactory, getStatementInstancesAddresses } from '../api'
+import { getFactoryOwner, getStatementAddressByIndex, getStatementFromInstance } from '../api'
+import { getStatementAuthor, createStatement } from '../api'
 
-import { getStatement } from '../eth/statement';
+
 import { Router, Route, Switch } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Navbar from './Navbar';
@@ -20,7 +22,7 @@ function App() {
       <Router history={history}>
         <Navbar />
         <Button variant="contained" color="primary" onClick={getFactoryItems}>
-        This is a button
+        TTTTEEEEEESSSSSSTTTTT
       </Button>
         <Switch>
           <Route path="/" exact component={Main} />
@@ -83,6 +85,10 @@ const getFactoryItems = async() => {
 
     }
   );
+
+  
+
+  await createStatement("ya estoy que ya", "Mario")
 
 }
 

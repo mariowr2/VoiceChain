@@ -54,7 +54,11 @@ describe('Statements', () => {
     it('deploys factory and  a statement', () => {
         assert.ok(statementContract.options.address);
         assert.ok(statementFactory.options.address)
-    });    
+    }); 
+    
+    it('is able to deploy a statement', async() => {
+        await statementFactory.methods.createStatement("tupu", "ta").send({from : accounts[0], gas: '1900000'});
+    });
 })
 
 
