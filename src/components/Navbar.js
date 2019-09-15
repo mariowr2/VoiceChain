@@ -40,12 +40,13 @@ export default function ButtonAppBar() {
                     <Typography variant="h6" className={classes.title}>
 
                     </Typography>
-                    <Link to="/our-mission" style={{ textDecoration: 'none' }}>
-                        <Button uppercase={false} style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>About VoiceChain</Button>
-                    </Link>
                     <Link to="/how-does-it-work" style={{ textDecoration: 'none' }}>
-                        <Button style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>How Does It Work</Button>
+                        <Button style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>About</Button>
                     </Link>
+                                        <Link to="/our-mission" style={{ textDecoration: 'none' }}>
+                        <Button uppercase={false} style={{ color: grey, textTransform: 'none', fontWeight: 350 }}>Our Mission</Button>
+                    </Link>
+
                 </Toolbar>
             </AppBar>
         </div>
