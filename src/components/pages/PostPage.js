@@ -10,24 +10,22 @@ import Color from '../Color';
 const PostPage = (props) => {
   const [page, setPage] = useState('post');
   const [message, setMessage] = useState(''); 
-
+  const [hashcode, setHashcode] = useState('');
   const persona = 'Kevin Navarro';
   const postColor = new Color().Post;
   const subheaderColor = new Color().Subheader;
-  const base = <FormControl 
+  const base = <FormControl
   style={{ width: '98%', textAlign: 'center', paddingBlockEnd: '20%', backgroundColor: 'white' }}
-  >
+  > 
   <InputLabel htmlFor="my-input">Make your statement.</InputLabel>
   <Input id="my-input" aria-describedby="my-helper-text"  />
   </FormControl>
   
-
   const handleClick = () => {
     setMessage(document.getElementById('my-input').value);
     setPage('confirm');
+    setHashcode('');
   }
-
-  
 
   const useStyles = makeStyles(theme => ({
     root: {
@@ -96,9 +94,8 @@ const PostPage = (props) => {
     return (
       <div className={classes.root}>
         <Typography className={classes.header}>Your post has been made!</Typography>
-        {console.log(message)}
         <Typography className={classes.metamask}>{message}</Typography>
-
+        <Typography className={classes.metamask}>{hashcode}</Typography>
       </div>
     )
   }
